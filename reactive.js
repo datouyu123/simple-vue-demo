@@ -23,7 +23,7 @@ function defineReactive(obj, key) {
     },
     set: function reactiveSetter(newVal) {
       if (newVal === val) return;
-      // obj[key] = newVal;
+       val = newVal;
       cb(newVal);
     }
   })
@@ -57,5 +57,7 @@ let o = new Vue({
     }
 });
 o._data.test = "hello world!";  /* 视图更新啦～ */
+
+console.log(o._data.test)
 
 
